@@ -32,7 +32,7 @@ const HeroSection = () => {
   return (
     <div className="relative h-screen bg-gray-900 overflow-hidden" id="home">
       <motion.img
-        src="/images/kingsukh guesh house assets/ayodhya.webp"
+        src="/images/assets/ayodhya.webp"
         className="absolute top-0 left-0 w-full h-full object-cover" // Ensure object-cover prevents overflow
         alt="Kingsukh Guest House"
         initial="hidden"

@@ -14,7 +14,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="mt-6 mx-auto max-w-5xl fixed left-0 right-0 bg-gray-900 bg-opacity-70 rounded-md z-10">
+    <nav className="mt-2 mx-auto max-w-5xl fixed left-0 right-0 bg-gray-900 bg-opacity-70 rounded-md z-10">
       <div className="flex flex-wrap items-center justify-between mx-auto p-1">
         <a href="/home" className="flex flex-col items-center">
           <span className="text-xl font-bold text-[#d4aa7d] uppercase border-b-2 border-t-2 border-[#a67c52] px-2 ml-4">
@@ -29,7 +29,7 @@ const Navbar = () => {
           <motion.button
             whileHover="hover"
             variants={buttonHover}
-            className="bg-[#d4aa7d] rounded-lg px-6 py-2 text-center text-sm text-white font-medium transition-all duration-100 hover:bg-[#a67c52]"
+            className="bg-[#012047] rounded-lg px-6 py-2 text-center text-sm text-white font-medium transition-all duration-100 hover:bg-[#012047]"
           >
             Book Now
           </motion.button>
