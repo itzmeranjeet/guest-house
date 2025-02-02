@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import About from "./About";
 import Services from "./Services";
 import HeroSection from "./HeroSection";
+import Rooms from "./Rooms";
 
 const HomePage = () => {
   const location = useLocation();
@@ -14,18 +15,19 @@ const HomePage = () => {
       scroller.scrollTo(location.hash.replace("#", ""), {
         duration: 500,
         smooth: true,
-        offset: 0, // Adjust for fixed header height
+        offset: 0,
       });
     }
   }, [location]);
 
   return (
     <>
-      <Navbar />
-      <HeroSection />
       <div>
+        <Navbar />
+        <HeroSection />
         <About />
         <Services />
+        <Rooms />
       </div>
     </>
   );
