@@ -79,7 +79,7 @@ const RoomList: React.FC = () => {
   ];
 
   return (
-    <section id="rooms" className="py-16 px-4 bg-gray-100">
+    <section id="rooms" className="py-16 px-4 ">
       <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
         Our Rooms
       </h2>

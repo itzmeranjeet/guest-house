@@ -7,6 +7,7 @@ const About = () => {
       className="flex justify-center min-h-screen py-16 px-4 sm:px-8 "
     >
       <div className="relative flex flex-col lg:flex-row w-full max-w-4xl bg-[#f4f4f4] shadow-lg rounded-md">
+        
         <div className="w-full lg:w-[360px] ">
           <img
             src="/images/assets/out.jpg"

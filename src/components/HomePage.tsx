@@ -6,6 +6,8 @@ import About from "./About";
 import Services from "./Services";
 import HeroSection from "./HeroSection";
 import Rooms from "./Rooms";
+import Gallery from "./Gallery";
+// import Gallery from "./Gallery";
 
 const HomePage = () => {
   const location = useLocation();
@@ -28,6 +30,7 @@ const HomePage = () => {
         <About />
         <Services />
         <Rooms />
+        <Gallery/>
       </div>
     </>
   );
