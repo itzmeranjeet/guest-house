@@ -7,6 +7,8 @@ import Services from "./Services";
 import HeroSection from "./HeroSection";
 import Rooms from "./Rooms";
 import Gallery from "./Gallery";
+import ContactForm from "./Contact";
+import Footer from "./Footer";
 // import Gallery from "./Gallery";
 
 const HomePage = () => {
@@ -31,6 +33,8 @@ const HomePage = () => {
         <Services />
         <Rooms />
         <Gallery/>
+        <ContactForm />
+        <Footer/>
       </div>
     </>
   );

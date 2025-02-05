@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./ui/button";
 
 const About = () => {
   return (
@@ -17,7 +18,7 @@ const About = () => {
         </div>
 
         <div className="w-full lg:w-1/2 flex flex-col justify-center p-6 lg:ml-[%]">
-          <span className="text-sm text-gray-500 font-semibold">ABOUT US</span>
+          <span className="text-xl text-gray-900 font-bold">ABOUT US</span>
           <h1 className="text-2xl font-bold text-gray-800 mb-4">
             The Best Holidays Start Here!
           </h1>
@@ -38,9 +39,9 @@ const About = () => {
           <p className="text-gray-600 text-sm mb-6">
             Contact us: +91 9007062180
           </p>
-          <button className="px-4 py-2 bg-[#012047] text-white text-sm font-semibold rounded-md hover:bg-blue-700 transition duration-300">
+          <Button className=" bg-[#a67c52] hover:bg-[#012047] transition duration-300">
             Read More
-          </button>
+          </Button>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { Button } from "./ui/button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,13 +27,13 @@ const Navbar = () => {
         </a>
 
         <motion.div className="flex items-center space-x-4">
-          <motion.button
-            whileHover="hover"
-            variants={buttonHover}
-            className="bg-[#012047] rounded-lg px-6 py-2 text-center text-sm text-white font-medium transition-all duration-100 hover:bg-[#012047]"
+          <Button
+            // whileHover="hover"
+            // variants={buttonHover}
+            className="bg-[#a67c52] rounded-lg px-6 py-2 text-center text-sm text-white font-medium transition-all duration-100 hover:bg-[#012047]"
           >
             Book Now
-          </motion.button>
+          </Button>
           <button
             onClick={handleMenuToggle}
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-gray-500 md:hidden"
@@ -76,7 +77,7 @@ const Navbar = () => {
                        ` ${item.toLowerCase()}`
                       );
                     }}
-                    className="block py-2 px-3 md:p-0 text-white hover:text-[#a67c52] transition-all duration-300 cursor-pointer"
+                    className="block font-medium py-2 px-3 md:p-0 text-white hover:text-[#a67c52] transition-all duration-300 cursor-pointer"
                   >
                     {item}
                   </Link>

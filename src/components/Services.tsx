@@ -1,29 +1,31 @@
 import React from "react";
+import { FaMapMarkedAlt } from "react-icons/fa";
+import { FaBuildingShield, FaClock, FaUtensils } from "react-icons/fa6";
 
 const services = [
   {
-    title: "Delicious Food",
-    icon: "🍽️",
+    title: "High Class Security",
+    icon: <FaBuildingShield />,
     bgColor: "bg-white",
-    textColor: "text-green-500",
+    textColor: "text-[#a67c52]",
   },
   {
-    title: "Fitness",
-    icon: "🚴",
+    title: "24 Hours Room Service",
+    icon: <FaClock />,
     bgColor: "bg-white",
-    textColor: "text-green-500",
+    textColor: "text-[#a67c52]",
   },
   {
-    title: "Inhouse Restaurant",
-    icon: "🍽️",
+    title: "Restaurant",
+    icon: <FaUtensils />,
     bgColor: "bg-white",
-    textColor: "text-green-500",
+    textColor: "text-[#a67c52]",
   },
   {
-    title: "Beauty Spa",
-    icon: "🌱",
+    title: "Tourist Guide Support",
+    icon: <FaMapMarkedAlt/>,
     bgColor: "bg-white",
-    textColor: "text-green-500",
+    textColor: "text-[#a67c52]",
   },
 ];
 
@@ -44,12 +46,11 @@ const Services: React.FC = () => {
 
         {/* Responsive Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-          {/* Services List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {services.map((service, index) => (
               <div
                 key={index}
-                className={`p-6 border rounded-lg flex items-center justify-center ${service.bgColor} ${service.textColor} text-lg font-semibold shadow-md transition-all hover:scale-105 hover:bg-green-500 hover:text-white`}
+                className={`p-6 border rounded-lg flex items-center justify-center ${service.bgColor} ${service.textColor} text-lg font-semibold shadow-md transition-all hover:scale-105 hover:bg-[#a67c52] hover:text-white`}
               >
                 <span className="text-3xl mr-3">{service.icon}</span>
                 {service.title}
@@ -57,7 +58,6 @@ const Services: React.FC = () => {
             ))}
           </div>
 
-          {/* Image Section */}
           <div className="w-full">
             <img
               src="/images/assets/palash.webp"

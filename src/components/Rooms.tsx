@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./ui/button";
 
 interface RoomCardProps {
   image: string;
@@ -38,9 +39,9 @@ const RoomCard: React.FC<RoomCardProps> = ({
           <span className="text-green-600 font-bold text-lg">
             ${price}/night
           </span>
-          <button className="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+          <Button className="bg-[#a67c52] hover:bg-[#012047] transition duration-300">
             Book now
-          </button>
+          </Button>
         </div>
       </div>
     </div>

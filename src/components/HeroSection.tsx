@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, Variants } from "framer-motion";
 
 const HeroSection = () => {
@@ -15,7 +14,7 @@ const HeroSection = () => {
     hidden: { opacity: 0, x: -100 },
     show: { opacity: 1, x: 0, transition: { duration: 1.2 } },
   };
-  
+
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 50 },
     show: {
@@ -33,7 +32,7 @@ const HeroSection = () => {
     <div className="relative h-screen bg-gray-900 overflow-hidden" id="home">
       <motion.img
         src="/images/assets/ayodhya.webp"
-        className="absolute top-0 left-0 w-full h-full object-cover" // Ensure object-cover prevents overflow
+        className="absolute top-0 left-0 w-full h-full object-cover"
         alt="Kingsukh Guest House"
         initial="hidden"
         animate="show"
@@ -53,7 +52,7 @@ const HeroSection = () => {
         </motion.p>
         <motion.h2
           variants={fadeInUp}
-          className="text-3xl md:text-5xl font-bold"
+          className="text-4xl md:text-7xl font-bold"
         >
           Make Yourself At Home In Our{" "}
           <motion.span
