@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "./ui/button";
+import { motion, useInView } from "framer-motion"; // Import motion and useInView hook
 
 interface RoomCardProps {
   image: string;
-  guests: number;
-  size: number;
   title: string;
   description: string;
   price: number;
@@ -12,39 +11,41 @@ interface RoomCardProps {
 
 const RoomCard: React.FC<RoomCardProps> = ({
   image,
-  guests,
-  size,
   title,
   description,
   price,
 }) => {
   return (
-    <div className="bg-gray-50 p-6 rounded-lg shadow-lg w-80 flex-shrink-0">
+    <motion.div
+      className="bg-white p-6 rounded-xl shadow-lg w-full max-w-sm sm:max-w-md md:max-w-lg flex-shrink-0 hover:shadow-2xl transition-all duration-300"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="relative">
         <img
           src={image}
           alt={title}
-          className="w-full h-48 rounded-lg object-cover hover:scale-105 transition-all duration-300 ease-in-out"
+          className="w-full h-56 rounded-lg object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
         />
         {title === "Standard Room" && (
-          <span className="absolute top-2 right-2 bg-yellow-500 text-white px-2 py-1 text-xs rounded-md">
-            Popular
+          <span className="absolute top-2 right-2 bg-yellow-500 text-white px-3 py-1 text-xs rounded-full shadow-md">
+            ⭐ Popular
           </span>
         )}
       </div>
       <div className="mt-4">
-        <h3 className="text-lg font-bold text-gray-800 mt-2">{title}</h3>
-        <p className="text-gray-600 text-sm mt-1">{description}</p>
+        <h3 className="text-xl font-semibold text-[#333333]">{title}</h3>
+        <p className="text-[#6A7B3D] text-sm mt-2">{description}</p>
         <div className="flex justify-between items-center mt-4">
-          <span className="text-green-600 font-bold text-lg">
-            ${price}/night
+          <span className="text-[#6A7B3D] font-bold text-lg">
+            {price}/night
           </span>
-          <Button className="bg-[#a67c52] hover:bg-[#012047] transition duration-300">
-            Book now
-          </Button>
+          <Button>Book Now</Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -52,40 +53,35 @@ const RoomList: React.FC = () => {
   const rooms: RoomCardProps[] = [
     {
       image: "/images/assets/large.jpg",
-      guests: 4,
-      size: 95,
       title: "Cozy Haven Room",
       description:
         "Escape to comfort in our Cozy Haven Room, a snug retreat designed for intimate relaxation.",
-      price: 175,
+      price: 1000,
     },
     {
       image: "/images/assets/small.jpg",
-      guests: 2,
-      size: 50,
       title: "Standard Room",
       description:
         "Indulge in luxury and ample space in our Spacious Serenity Suite, where tranquility meets roomy elegance.",
-      price: 75,
+      price: 1500,
     },
     {
       image: "/images/assets/room1.jpg",
-      guests: 4,
-      size: 95,
       title: "Spacious Serenity Suite",
       description:
         "Escape to comfort in our Cozy Haven Room, a snug retreat designed for intimate relaxation.",
-      price: 175,
+      price: 1000,
     },
   ];
 
+  const ref = useRef(null);
+
   return (
-    <section id="rooms" className="py-16 px-4 ">
-      <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
-        Our Rooms
-      </h2>
-      {/* Flex container with responsive behavior */}
-      <div className="flex gap-6 justify-center items-center overflow-x-auto flex-nowrap max-w-[500px]:flex-col">
+    <section id="rooms" ref={ref} className="py-16 px-4 bg-[#f5ebe0]">
+      <h1 className="text-4xl font-bold text-[#B86B4B] text-center mb-10">
+        OUR ROOMS
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center px-4">
         {rooms.map((room, index) => (
           <RoomCard key={index} {...room} />
         ))}

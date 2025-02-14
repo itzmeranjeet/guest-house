@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
-import { scroller } from "react-scroll";
+import {  scroller } from "react-scroll";
 import { useLocation } from "react-router-dom";
-import Navbar from "./Navbar";
 import About from "./About";
 import Services from "./Services";
 import HeroSection from "./HeroSection";
 import Rooms from "./Rooms";
 import Gallery from "./Gallery";
-import ContactForm from "./Contact";
+import Contact from "./Contact";
 import Footer from "./Footer";
-// import Gallery from "./Gallery";
+import NavbarTwo from "./NavbarTwo";
+
 
 const HomePage = () => {
   const location = useLocation();
@@ -27,13 +27,13 @@ const HomePage = () => {
   return (
     <>
       <div>
-        <Navbar />
+        <NavbarTwo />
         <HeroSection />
         <About />
         <Services />
         <Rooms />
         <Gallery/>
-        <ContactForm />
+        <Contact />
         <Footer/>
       </div>
     </>

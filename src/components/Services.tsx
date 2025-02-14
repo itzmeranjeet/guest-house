@@ -1,73 +1,98 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { FaBuildingShield, FaClock, FaUtensils } from "react-icons/fa6";
+import { motion, useInView } from "framer-motion";
 
 const services = [
   {
     title: "High Class Security",
     icon: <FaBuildingShield />,
     bgColor: "bg-white",
-    textColor: "text-[#a67c52]",
+    textColor: "text-[#8B3D3D]",
   },
   {
     title: "24 Hours Room Service",
     icon: <FaClock />,
     bgColor: "bg-white",
-    textColor: "text-[#a67c52]",
+    textColor: "text-[#8B3D3D]",
   },
   {
-    title: "Restaurant",
+    title: "Restaurant and Bar",
     icon: <FaUtensils />,
     bgColor: "bg-white",
-    textColor: "text-[#a67c52]",
+    textColor: "text-[#8B3D3D]",
   },
   {
     title: "Tourist Guide Support",
-    icon: <FaMapMarkedAlt/>,
+    icon: <FaMapMarkedAlt />,
     bgColor: "bg-white",
-    textColor: "text-[#a67c52]",
+    textColor: "text-[#8B3D3D]",
   },
 ];
 
-const Services: React.FC = () => {
+const Services = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <section id="services" className="py-12 px-6 bg-gray-300">
+    <motion.section
+      id="services"
+      ref={ref}
+      className="py-20 px-4 bg-gray-300 lg:h-auto xl:h-auto"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container mx-auto">
-        {/* Heading Section */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-900 relative inline-block">
-            Our Services
-            {/* <span className="absolute left-1/2 transform -translate-x-1/2 w-20 h-1 bg-green-500 rounded-full bottom-0 mt-2"></span> */}
+          <h2 className="text-4xl font-bold text-[#B86B4B] relative inline-block">
+            OUR SERVICES{" "}
           </h2>
-          <p className="text-gray-600 mt-4 max-w-lg mx-auto">
+          <p className="text-[#333333] mt-4 max-w-lg mx-auto">
             Strive Only For The Best.
           </p>
         </div>
 
-        {/* Responsive Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 ">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={index}
-                className={`p-6 border rounded-lg flex items-center justify-center ${service.bgColor} ${service.textColor} text-lg font-semibold shadow-md transition-all hover:scale-105 hover:bg-[#a67c52] hover:text-white`}
+                initial={{ opacity: 0, y: 50 }} 
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }
+                } 
+                transition={{
+                  delay: index * 0.3, 
+                  duration: 0.8,
+                  ease: "easeOut",
+                }}
+                className={`p-6 border rounded-lg flex items-center ${service.bgColor} ${service.textColor} text-lg font-semibold shadow-md transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#8B3D3D] hover:text-white`}
               >
                 <span className="text-3xl mr-3">{service.icon}</span>
                 {service.title}
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="w-full">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }} 
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }} 
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+            }}
+            className="w-full shadow-2xl "
+          >
             <img
               src="/images/assets/palash.webp"
               alt="Dining"
-              className="w-full h-[250px] sm:h-[350px] object-cover rounded-lg shadow-md"
+              className="w-full h-[250px] sm:h-[350px] object-cover rounded-lg hover:scale-105 transition-all duration-500 ease-in-out"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

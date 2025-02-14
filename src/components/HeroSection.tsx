@@ -29,7 +29,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative h-screen bg-gray-900 overflow-hidden" id="home">
+    <div className="relative h-screen bg-gray-900  overflow-hidden" id="home">
       <motion.img
         src="/images/assets/ayodhya.webp"
         className="absolute top-0 left-0 w-full h-full object-cover"
@@ -65,7 +65,7 @@ const HeroSection = () => {
               ],
             }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="text-[#d4aa7d]"
+            className="text-[#D06F2F]"
           >
             Guest House
           </motion.span>

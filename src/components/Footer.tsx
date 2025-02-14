@@ -4,7 +4,6 @@ import {
   FaEnvelopeOpen,
   FaFacebookF,
   FaTwitter,
-  FaGooglePlusG,
   FaTelegramPlane,
   FaInstagram,
   FaYoutube,
@@ -15,13 +14,13 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto py-10 px-5">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-700 pb-8">
-          <div className="flex items-center space-x-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-700 pb-8 justify-between">
+          <div className="flex items-center space-x-4 ">
             <FaMapMarkerAlt className="text-orange-500 text-2xl" />
             <div>
               <h4 className="text-lg font-semibold">Find us</h4>
               <p className="text-gray-400">
-                Beside Barshal Water Tank, Manpur, Barhanti
+                Beside Barshal Water Tank, Manpur, Barhanti,
               </p>
               <p className="text-gray-400">West Bengal 723156</p>
             </div>
@@ -44,31 +43,31 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
           <div>
-            <a href="/home" className="flex flex-col w-32">
-              <span className="text-xl font-bold text-[#d4aa7d] uppercase border-b-2 border-t-2 border-[#a67c52] px-2">
+            <a href="home" className="flex flex-col w-32">
+              <span className="text-xl font-bold text-[#D06F2F] uppercase border-b-2 border-t-2 border-[#D06F2F] px-2">
                 Kingsukh
               </span>
-              <span className="text-sm font-medium text-[#a67c52] italic mt-1">
+              <span className="text-sm font-medium text-[#D06F2F] italic mt-1">
                 Guest House
               </span>
             </a>
-            <p className="text-gray-400 text-md">
+            <p className="text-gray-400 text-md mt-4">
               Discover a world of comfort, luxury, and adventure as you explore
               our curated selection of hotels, making every moment of your
               getaway truly extraordinary.
             </p>
             <div className="mt-4 space-x-6 flex">
-              <a href="#" className="text-[#1877F2] text-2xl">
+              <a href="home" className="text-[#1877F2] text-2xl">
                 <FaFacebookF />
               </a>
-              <a href="#" className="text-[#1DA1F2] text-2xl">
+              <a href="home" className="text-[#1DA1F2] text-2xl">
                 <FaTwitter />
               </a>
-              <a href="#" className="text-[#FF0000] text-2xl">
+              <a href="home" className="text-[#FF0000] text-2xl">
                 <FaYoutube />
               </a>
               <a
-                href="#"
+                href="home"
                 className="text-xl bg-gradient-to-r from-[#F58529] via-[#DD2A7B] to-[#8134AF] p-1 rounded-full"
               >
                 <FaInstagram className="text-white" />
@@ -86,11 +85,8 @@ const Footer = () => {
                 "Customer Reviews & Ratings",
                 "Travel Tips & Guides",
               ].map((link, index) => (
-                <li
-                  key={index}
-                  className="hover:text-orange-500 cursor-pointer"
-                >
-                  {link}
+                <li key={index} className="hover:text-[#D06F2F] cursor-pointer">
+                  <a href="home">{link}</a>
                 </li>
               ))}
             </ul>
@@ -104,12 +100,8 @@ const Footer = () => {
                 "Airport Transfers",
                 "Wellness & Recreation",
               ].map((link, index) => (
-                <li
-                  key={index}
-                  className="hover:text-[#a67c52] cursor-pointer"
-                >
-                  {/* bg-[] */}
-                  {link}
+                <li key={index} className="hover:text-[#D06F2F] cursor-pointer">
+                  <a href="home">{link}</a>
                 </li>
               ))}
             </ul>

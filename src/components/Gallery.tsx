@@ -21,31 +21,34 @@ const images = [
 
 const Gallery = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true });
+
   return (
     <section id="gallery" ref={ref} className="bg-gray-300 p-10">
       <div className="container mx-auto p-4">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-900 relative inline-block">
-            Gallery
-          </h2>
+          <h1 className="text-4xl text-[#B86B4B] font-bold">GALLERY</h1>
         </div>
 
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-1 space-y-1">
           {images.map((src, index) => {
             const animationDirection = index % 2 === 0 ? -50 : 50;
+
             return (
               <motion.div
                 key={index}
                 className="overflow-hidden rounded-lg shadow-lg break-inside-avoid"
-                initial={{ opacity: 0, x: animationDirection }} // Starts hidden & moves up
+                initial={{ opacity: 0, x: animationDirection }}
                 animate={
-                  isInView
+                  inView
                     ? { opacity: 1, x: 0 }
                     : { opacity: 0, x: animationDirection }
-                } // Only animates when in view
-                transition={{ duration: 0.9, delay: index * 0.1 }} // Staggered animation
-                whileHover={{ scale: 1.05 }} // Zoom-in on hover
+                }
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
               >
                 <img
                   src={src}
